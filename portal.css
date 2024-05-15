@@ -1,0 +1,32 @@
+header {
+    background-color: rgb(60, 74, 95);
+    margin-bottom: 10vh;
+    text-align: center;
+    padding: 50px;
+}
+div.posty {
+    width: 50vw;
+    margin: 0 auto;
+    background-color: rgb(175, 175, 175);
+    padding: 10px;
+    margin-bottom: 10vh;
+}
+img.obraz-posta {
+    width: 100%;
+}
+div.dol-strony {
+    display: flex;
+}
+div#container {
+    display: flex;
+}
+
+span.data,
+span.reakcje {
+    display: block;
+    flex: 1;
+    font-size: 75%;
+}
+span.reakcje {
+    text-align: right;
+}
