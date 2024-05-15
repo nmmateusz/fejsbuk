@@ -1,3 +1,6 @@
+body{
+    color: white;
+}
 header {
     background-color: rgb(60, 74, 95);
     margin-bottom: 10vh;
