@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 15 Maj 2024, 19:28
+-- Czas generowania: 21 Maj 2024, 20:56
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -65,10 +65,10 @@ CREATE TABLE `photo` (
 
 CREATE TABLE `profile` (
   `ID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
   `firstName` varchar(128) NOT NULL,
   `lastName` varchar(128) NOT NULL,
-  `profilePhotoID` int(11) NOT NULL,
-  `description` text NOT NULL
+  `profilePhotoID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,7 +121,8 @@ ALTER TABLE `photo`
 -- Indeksy dla tabeli `profile`
 --
 ALTER TABLE `profile`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `userID` (`userID`);
 
 --
 -- Indeksy dla tabeli `profiletype`
@@ -174,6 +175,16 @@ ALTER TABLE `profiletype`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `profile`
+--
+ALTER TABLE `profile`
+  ADD CONSTRAINT `profile_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
