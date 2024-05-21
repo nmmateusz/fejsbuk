@@ -36,7 +36,6 @@ $result = $query->get_result()->fetch_assoc();
 
 $firstName = $result['firstName'];
 $lastName = $result['lastName'];
-$description = $result['description'];
 $profilePhotoUrl = $result['url']
 ?>
 
@@ -55,9 +54,6 @@ $profilePhotoUrl = $result['url']
         </span>
         <img src="<?php echo $profilePhotoUrl; ?>" 
             alt="" id="profilePhoto">
-        <p id="profileDescription">
-            <?php echo $description; ?>
-        </p>
     </div>
 </body>
 </html>
